@@ -1,9 +1,8 @@
-function clearF() {
-    var grab = document.getElementById("inputti");
-      if (grab.value !="") {
-          grab.value = "";
-      }
-    }
+function clearF(e) {
+    let parent = document.getElementById("titlediv");
+    let child = document.getElementById("title1");
+    parent.removeChild(child);
+}
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
  }
@@ -18,17 +17,16 @@ function GetData() {
                 b++
             }
         if (b>=7 && i%2 !== 0) {lista.push(i);}}
-        console.log(b)
     }
         
 lista = lista.filter((item,index) => lista.indexOf(item) === index);
     console.log(lista)
     const text = document.createTextNode(lista);
     const pNode = document.getElementById("vastaus");
+    const pNode2 = document.getElementById("title");
     
-
     pNode.appendChild(text);
     sleep(5000).then(() => {vastaus.parentNode.removeChild(vastaus);})
-    clearF()
+    
     sleep(4000).then(() => {location.reload();})
 }
