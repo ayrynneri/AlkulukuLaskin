@@ -1,8 +1,4 @@
-function clearF(e) {
-    let parent = document.getElementById("titlediv");
-    let child = document.getElementById("title1");
-    parent.removeChild(child);
-}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
  }
